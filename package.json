@@ -1,0 +1,54 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "dugganusa-threat-intel",
+  "title": "DugganUSA Threat Intel",
+  "description": "Look up IPs, domains, hashes, CVEs against 1M+ threat indicators. AIPM audit any domain.",
+  "icon": "icon.png",
+  "author": "dugganusa",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "lookup",
+      "title": "Threat Intel Lookup",
+      "subtitle": "DugganUSA",
+      "description": "Check an IP, domain, hash, or CVE against 1.08M+ IOCs",
+      "mode": "view"
+    },
+    {
+      "name": "aipm",
+      "title": "AIPM Audit",
+      "subtitle": "DugganUSA",
+      "description": "Audit any domain's AI presence — 5 models, 7 signals, 15 seconds",
+      "mode": "view"
+    },
+    {
+      "name": "scan-clipboard",
+      "title": "Scan Clipboard for IOCs",
+      "subtitle": "DugganUSA",
+      "description": "Extract and check all IOCs from clipboard contents",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "API Key",
+      "description": "DugganUSA API key (optional — free tier works). Get one at https://analytics.dugganusa.com/stix/register",
+      "type": "textfield",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.64.0",
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.8",
+    "typescript": "^5.3.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop"
+  }
+}

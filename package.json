@@ -27,6 +27,20 @@
       "subtitle": "DugganUSA",
       "description": "Extract and check all IOCs from clipboard contents",
       "mode": "view"
+    },
+    {
+      "name": "tor-check",
+      "title": "Tor Relay Check",
+      "subtitle": "DugganUSA",
+      "description": "Check if an IP address is a known Tor relay — 10,000+ relays indexed",
+      "mode": "view"
+    },
+    {
+      "name": "tor-hunt",
+      "title": "Tor Relay Hunt",
+      "subtitle": "DugganUSA",
+      "description": "Find suspicious Tor relays — proactive threat hunting",
+      "mode": "view"
     }
   ],
   "preferences": [

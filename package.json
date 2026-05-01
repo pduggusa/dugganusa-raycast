@@ -1,6 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "dugganusa-threat-intel",
+  "version": "1.1.0",
   "title": "DugganUSA Threat Intel",
   "description": "Look up IPs, domains, hashes, CVEs against 1M+ threat indicators. AIPM audit any domain.",
   "icon": "icon.png",
@@ -18,7 +19,7 @@
       "name": "aipm",
       "title": "AIPM Audit",
       "subtitle": "DugganUSA",
-      "description": "Audit any domain's AI presence — 5 models, 7 signals, 15 seconds",
+      "description": "Audit any domain's AI presence \u2014 5 models, 7 signals, 15 seconds",
       "mode": "view"
     },
     {
@@ -32,14 +33,14 @@
       "name": "tor-check",
       "title": "Tor Relay Check",
       "subtitle": "DugganUSA",
-      "description": "Check if an IP address is a known Tor relay — 10,000+ relays indexed",
+      "description": "Check if an IP address is a known Tor relay \u2014 10,000+ relays indexed",
       "mode": "view"
     },
     {
       "name": "tor-hunt",
       "title": "Tor Relay Hunt",
       "subtitle": "DugganUSA",
-      "description": "Find suspicious Tor relays — proactive threat hunting",
+      "description": "Find suspicious Tor relays \u2014 proactive threat hunting",
       "mode": "view"
     }
   ],
@@ -47,7 +48,7 @@
     {
       "name": "apiKey",
       "title": "API Key",
-      "description": "DugganUSA API key (optional — free tier works). Get one at https://analytics.dugganusa.com/stix/register",
+      "description": "DugganUSA API key (optional \u2014 free tier works). Get one at https://analytics.dugganusa.com/stix/register",
       "type": "textfield",
       "required": false,
       "default": ""

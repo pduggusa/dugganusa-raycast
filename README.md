@@ -2,11 +2,21 @@
 
 **Instant IOC lookup from your Mac launcher. Type an IP, get enrichment.**
 
+## What's New
+
+The corpus this extension queries now exposes **three live, no-auth, durable validation endpoints** so you can verify feed quality yourself — they survive deploys, so the numbers are real:
+
+- **Novelty** — [feed-uniqueness](https://analytics.dugganusa.com/api/v1/feed-uniqueness): ~75%+ of what we publish is **not in ThreatFox**.
+- **Timeliness** — [kev-lead](https://analytics.dugganusa.com/api/v1/kev-lead): we flag exploited CVEs roughly **31 days ahead of CISA KEV** on average.
+- **Accuracy** — [spamhaus-validation](https://analytics.dugganusa.com/api/v1/spamhaus-validation): Spamhaus **independently corroborates** our first-hand contributions.
+
+Type an IP and the verdict you get back is drawn from intel that is independently novel, early, and corroborated. (We cap our own claims at 95% honest confidence.)
+
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| **Threat Intel Lookup** | Check an IP, domain, hash, or CVE against 1.08M+ IOCs |
+| **Threat Intel Lookup** | Check an IP, domain, hash, or CVE against 1.10M+ IOCs |
 | **AIPM Audit** | Audit any domain's AI presence — opens in browser |
 | **Scan Clipboard** | Extract + check all IOCs from clipboard contents |
 
@@ -25,7 +35,7 @@ npm run dev
 
 Set your API key in Raycast Preferences → Extensions → DugganUSA Threat Intel → API Key.
 
-Free tier (500 queries/day) works without a key. Get one at [analytics.dugganusa.com/stix/register](https://analytics.dugganusa.com/stix/register).
+The DugganUSA feed is **API-key-enforced** — anonymous requests return `401`, an unregistered token returns `429`. The free tier (500 queries/day) is a **free registered key**, not anonymous access. Register (30 seconds, no card) at [analytics.dugganusa.com/stix/register](https://analytics.dugganusa.com/stix/register).
 
 ## Part of the DugganUSA Ecosystem
 

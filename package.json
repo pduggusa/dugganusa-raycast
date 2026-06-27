@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "dugganusa-threat-intel",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "title": "DugganUSA Threat Intel",
   "description": "Look up IPs, domains, hashes, CVEs against 1M+ threat indicators. AIPM audit any domain.",
   "icon": "icon.png",
@@ -12,7 +12,7 @@
       "name": "lookup",
       "title": "Threat Intel Lookup",
       "subtitle": "DugganUSA",
-      "description": "Check an IP, domain, hash, or CVE against 1.08M+ IOCs",
+      "description": "Check an IP, domain, hash, or CVE against 1.10M+ IOCs",
       "mode": "view"
     },
     {
@@ -48,9 +48,9 @@
     {
       "name": "apiKey",
       "title": "API Key",
-      "description": "DugganUSA API key (optional \u2014 free tier works). Get one at https://analytics.dugganusa.com/stix/register",
+      "description": "DugganUSA API key (free registered key required \u2014 the feed is API-key-enforced). Get one at https://analytics.dugganusa.com/stix/register",
       "type": "textfield",
-      "required": false,
+      "required": true,
       "default": ""
     }
   ],

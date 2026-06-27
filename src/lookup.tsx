@@ -42,10 +42,10 @@ export default function LookupCommand() {
 
       if (totalHits > 0) {
         const summary = summarize(correlations);
-        setResult(`# ⚠️ Threat Indicator Found\n\n**${value}**\n\n${summary}\n\n**${totalHits} cross-index hits**\n\n[View full enrichment](${API_URL}/search/correlate?q=${encodeURIComponent(value)})\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · 1.08M+ IOCs · [AIPM Audit](https://aipmsec.com)*`);
+        setResult(`# ⚠️ Threat Indicator Found\n\n**${value}**\n\n${summary}\n\n**${totalHits} cross-index hits**\n\n[View full enrichment](${API_URL}/search/correlate?q=${encodeURIComponent(value)})\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · 1.10M+ IOCs · [AIPM Audit](https://aipmsec.com)*`);
         showToast({ style: Toast.Style.Failure, title: totalHits + " threat hits found!" });
       } else {
-        setResult(`# ✅ Clean\n\n**${value}**\n\nNot found in 1,080,000+ IOC index.\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · [Free API Key](https://analytics.dugganusa.com/stix/register)*`);
+        setResult(`# ✅ Clean\n\n**${value}**\n\nNot found in 1.10M+ IOC index.\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · [Free API Key](https://analytics.dugganusa.com/stix/register)*`);
         showToast({ style: Toast.Style.Success, title: "Clean — no threats found" });
       }
     } catch (e: any) {
@@ -71,7 +71,7 @@ export default function LookupCommand() {
   return (
     <Form actions={<ActionPanel><Action.SubmitForm title="Look Up" onSubmit={handleSubmit} /></ActionPanel>}>
       <Form.TextField id="indicator" title="Indicator" placeholder="IP, domain, hash, or CVE..." autoFocus />
-      <Form.Description text="Checks against 1,080,000+ IOCs from the DugganUSA STIX feed. 275+ consumers in 46 countries." />
+      <Form.Description text="Checks against 1.10M+ IOCs from the DugganUSA STIX feed. 275+ consumers in 46 countries." />
     </Form>
   );
 }

@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.1] - 2026-06-30
+
+### Added
+- Documented the fourth live validation axis — Liveness (/api/v1/feed-efficacy).
+
+### Changed
+- Refreshed IOC corpus copy to 1.5M+ IOCs (~1.57M live).
+- Reworded the Timeliness validation bullet to point at the live kev-lead ledger instead of a fixed "~31 days ahead" average.
+
 ## 1.2.0 (2026-06-27)
 
 ### Documentation & Feed-Awareness

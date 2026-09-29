@@ -17,7 +17,7 @@ Type an IP and the verdict you get back is drawn from intel that is independentl
 
 | Command | Description |
 |---------|-------------|
-| **Threat Intel Lookup** | Check an IP, domain, hash, or CVE against 1.5M+ IOCs |
+| **Threat Intel Lookup** | Check an IP, domain, hash, or CVE against 1.9M+ IOCs |
 | **AIPM Audit** | Audit any domain's AI presence — opens in browser |
 | **Scan Clipboard** | Extract + check all IOCs from clipboard contents |
 

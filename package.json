@@ -3,7 +3,7 @@
   "name": "dugganusa-threat-intel",
   "version": "1.2.2",
   "title": "DugganUSA Threat Intel",
-  "description": "Look up IPs, domains, hashes, CVEs against 1M+ threat indicators. AIPM audit any domain.",
+  "description": "Look up IPs, domains, hashes, CVEs against the DugganUSA Feed. AIPM audit any domain.",
   "icon": "icon.png",
   "author": "dugganusa",
   "license": "MIT",
@@ -12,7 +12,7 @@
       "name": "lookup",
       "title": "Threat Intel Lookup",
       "subtitle": "DugganUSA",
-      "description": "Check an IP, domain, hash, or CVE against 1.9M+ IOCs",
+      "description": "Check an IP, domain, hash, or CVE against the DugganUSA Feed",
       "mode": "view"
     },
     {

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-19
+
+### Security
+- **Failed lookups were reported clean.** No command checked `res.ok`, so a `401` (unregistered key), a `429` (past the free tier's 10/day) or a `5xx` parsed to an empty result: Lookup showed "Clean", Scan Clipboard listed every indicator as clean. Non-2xx now throws and shows as UNKNOWN (not checked, not clean). Applies to all four API commands.
+
 ## [1.2.2] - 2026-09-29
 
 ### Changed

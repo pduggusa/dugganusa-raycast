@@ -20,6 +20,8 @@ export default function TorCheckCommand() {
       if (apiKey) headers["Authorization"] = "Bearer " + apiKey;
 
       const res = await fetch(`${API_URL}/tor/relays?q=${encodeURIComponent(ip)}&limit=1`, { headers });
+      // A 401/429/5xx carries a JSON error body with no results; reading it as a result said "clean".
+      if (!res.ok) throw new Error("HTTP " + res.status + (res.status === 401 ? " (key missing or unregistered)" : res.status === 429 ? " (daily limit reached)" : ""));
       const json = await res.json() as any;
       const relays = json.data?.relays || json.data?.hits || [];
 

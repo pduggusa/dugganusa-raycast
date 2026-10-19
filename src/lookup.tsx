@@ -35,6 +35,8 @@ export default function LookupCommand() {
       if (apiKey) headers["Authorization"] = "Bearer " + apiKey;
 
       const res = await fetch(`${API_URL}/search/correlate?q=${encodeURIComponent(value)}`, { headers });
+      // A 401/429/5xx carries a JSON error body with no results; reading it as a result said "clean".
+      if (!res.ok) throw new Error("HTTP " + res.status + (res.status === 401 ? " (key missing or unregistered)" : res.status === 429 ? " (daily limit reached)" : ""));
       const json = await res.json() as any;
       const correlations = json.data?.correlations || {};
       const totalHits = Object.values(correlations)
@@ -42,14 +44,14 @@ export default function LookupCommand() {
 
       if (totalHits > 0) {
         const summary = summarize(correlations);
-        setResult(`# ⚠️ Threat Indicator Found\n\n**${value}**\n\n${summary}\n\n**${totalHits} cross-index hits**\n\n[View full enrichment](${API_URL}/search/correlate?q=${encodeURIComponent(value)})\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · 1.9M+ IOCs · [AIPM Audit](https://aipmsec.com)*`);
+        setResult(`# ⚠️ Threat Indicator Found\n\n**${value}**\n\n${summary}\n\n**${totalHits} cross-index hits**\n\n[View full enrichment](${API_URL}/search/correlate?q=${encodeURIComponent(value)})\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · [AIPM Audit](https://aipmsec.com)*`);
         showToast({ style: Toast.Style.Failure, title: totalHits + " threat hits found!" });
       } else {
-        setResult(`# ✅ Clean\n\n**${value}**\n\nNot found in 1.9M+ IOC index.\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · [Free API Key](https://analytics.dugganusa.com/stix/register)*`);
+        setResult(`# ✅ Clean\n\n**${value}**\n\nNot found in the DugganUSA IOC index.\n\n---\n*Powered by [DugganUSA](https://www.dugganusa.com) · [Free API Key](https://analytics.dugganusa.com/stix/register)*`);
         showToast({ style: Toast.Style.Success, title: "Clean — no threats found" });
       }
     } catch (e: any) {
-      showToast({ style: Toast.Style.Failure, title: "API Error", message: e.message });
+      showToast({ style: Toast.Style.Failure, title: "UNKNOWN — not checked (not clean)", message: e.message });
     }
   }
 
@@ -71,7 +73,7 @@ export default function LookupCommand() {
   return (
     <Form actions={<ActionPanel><Action.SubmitForm title="Look Up" onSubmit={handleSubmit} /></ActionPanel>}>
       <Form.TextField id="indicator" title="Indicator" placeholder="IP, domain, hash, or CVE..." autoFocus />
-      <Form.Description text="Checks against 1.9M+ IOCs from the DugganUSA STIX feed." />
+      <Form.Description text="Checks against the DugganUSA IOC index." />
     </Form>
   );
 }

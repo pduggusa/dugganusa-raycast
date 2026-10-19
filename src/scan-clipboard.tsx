@@ -45,6 +45,8 @@ export default function ScanClipboardCommand() {
       for (const value of iocs.slice(0, 20)) {
         try {
           const res = await fetch(`${API_URL}/search/correlate?q=${encodeURIComponent(value)}`, { headers });
+          // A 401/429/5xx carries a JSON error body with no results; reading it as a result said "clean".
+          if (!res.ok) throw new Error("HTTP " + res.status + (res.status === 401 ? " (key missing or unregistered)" : res.status === 429 ? " (daily limit reached)" : ""));
           const json = await res.json() as any;
           const correlations = json.data?.correlations || {};
           const hits = Object.values(correlations).reduce((s: number, h: any) => s + (Array.isArray(h) ? h.length : 0), 0);
@@ -54,8 +56,8 @@ export default function ScanClipboardCommand() {
           } else {
             lines.push(`- ✅ \`${value}\` — clean`);
           }
-        } catch {
-          lines.push(`- ❓ \`${value}\` — lookup failed`);
+        } catch (e) {
+          lines.push(`- ❓ \`${value}\` — UNKNOWN, not checked (${(e as Error).message})`);
         }
       }
 

@@ -18,6 +18,8 @@ export default function TorHuntCommand() {
         if (apiKey) headers["Authorization"] = "Bearer " + apiKey;
 
         const res = await fetch(`${API_URL}/tor/hunt`, { headers });
+        // A 401/429/5xx carries a JSON error body with no results; reading it as a result said "clean".
+        if (!res.ok) throw new Error("HTTP " + res.status + (res.status === 401 ? " (key missing or unregistered)" : res.status === 429 ? " (daily limit reached)" : ""));
         const json = await res.json() as any;
         setRelays(json.data?.relays || json.data || []);
       } catch (e: any) {

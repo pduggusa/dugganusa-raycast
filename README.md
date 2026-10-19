@@ -40,7 +40,7 @@ npm run dev
 
 Set your API key in Raycast Preferences → Extensions → DugganUSA Threat Intel → API Key.
 
-The DugganUSA feed is **API-key-enforced** — anonymous requests return `401`, an unregistered token returns `429`. The free tier (10 queries/day; [pricing](https://analytics.dugganusa.com/stix/pricing)) is a **free registered key**, not anonymous access. Register (30 seconds, no card) at [analytics.dugganusa.com/stix/register](https://analytics.dugganusa.com/stix/register).
+The DugganUSA feed is **API-key-enforced** — anonymous requests and unregistered keys return `401`; a key past its daily limit returns `429`. Both show as UNKNOWN, never clean. The free tier (10 queries/day — one clipboard scan can use up to 20; [pricing](https://analytics.dugganusa.com/stix/pricing)) is a **free registered key**, not anonymous access. Register (30 seconds, no card) at [analytics.dugganusa.com/stix/register](https://analytics.dugganusa.com/stix/register).
 
 ## Part of the DugganUSA Ecosystem
 

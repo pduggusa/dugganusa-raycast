@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.3 - 2026-10-19
+
+- Lookups that the API refuses (401, 429) or that fail are shown as UNKNOWN, never Clean (advisory: https://github.com/pduggusa/dugganusa-cli/releases/tag/v1.5.5).
+
 ## 2026-10-19
 
 ### Security

@@ -40,7 +40,7 @@ npm run dev
 
 Set your API key in Raycast Preferences → Extensions → DugganUSA Threat Intel → API Key.
 
-The DugganUSA feed is **API-key-enforced** — anonymous requests and unregistered keys return `401`; a key past its daily limit returns `429`. Both show as UNKNOWN, never clean. The free tier (10 queries/day — one clipboard scan can use up to 20; [pricing](https://analytics.dugganusa.com/stix/pricing)) is a **free registered key**, not anonymous access. Register (30 seconds, no card) at [analytics.dugganusa.com/stix/register](https://analytics.dugganusa.com/stix/register).
+The DugganUSA feed is **API-key-enforced** — anonymous requests and unregistered keys return `401`; a key past its daily limit returns `429`. Both show as UNKNOWN, never clean. The free tier (10 queries/day — one clipboard scan can use up to 20; [pricing](https://analytics.dugganusa.com/pricing)) is a **free registered key**, not anonymous access. Register (30 seconds, no card) at [analytics.dugganusa.com/stix/register](https://analytics.dugganusa.com/stix/register).
 
 ## Part of the DugganUSA Ecosystem
 
@@ -82,6 +82,6 @@ Same DugganUSA Feed, surfaced wherever you live. Open source, MIT licensed, rece
 | [dugganusa-action](https://github.com/pduggusa/dugganusa-action) | GitHub Action |
 | [dredd-mcp](https://github.com/pduggusa/dredd-mcp) | Dredd: pre-flight MCP security |
 
-Backed by the [DugganUSA Feed](https://analytics.dugganusa.com/stix). Numbers are live: [/api/v1/search/stats](https://analytics.dugganusa.com/api/v1/search/stats). Pricing: [analytics.dugganusa.com/stix/pricing](https://analytics.dugganusa.com/stix/pricing). Contact: help@dugganusa.com.
+Backed by the [DugganUSA Feed](https://analytics.dugganusa.com/stix). Numbers are live: [/api/v1/search/stats](https://analytics.dugganusa.com/api/v1/search/stats). Pricing: [analytics.dugganusa.com/pricing](https://analytics.dugganusa.com/pricing). Contact: help@dugganusa.com.
 
 _Threat intelligence you can check._

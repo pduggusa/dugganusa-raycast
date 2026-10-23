@@ -1,5 +1,7 @@
 # DugganUSA Threat Intel — Raycast Extension
 
+**Docs:** https://docs.dugganusa.com/quickstart/
+
 **You do you. I do me. We share contexts.**
 
 Your launcher keeps your workflow; one keystroke borrows the DugganUSA Feed's context on an indicator.
